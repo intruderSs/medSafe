@@ -1,0 +1,17 @@
+<div class="overlay" [hidden]="isShop">
+</div>
+<app-progress_card [show]="!isShop" [msg_text]="progressMsg" [warn]="progressWarn" (retry)="checkShop()">
+</app-progress_card>
+
+<div class="dashboard"></div>
+
+<mshop-header (onCollapse)="isCollapse = !isCollapse"></mshop-header>
+
+<div class="container-fluid m-0">
+  <div class="row m-0">
+    <mshop-sidebar [isCollapsed]="isCollapse"></mshop-sidebar>
+    <main class="col-md-10 ms-sm-auto col-lg-10 m-0">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
